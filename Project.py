@@ -45,7 +45,7 @@ class_name_mapping = {'Blouses': 0, 'Casual bottoms': 1, 'Chemises': 2, 'Dresses
 
 
 with st.sidebar:
-    option = option_menu('Menu', ['Home', 'Model for Predicting', 'Add to cart', 'Payment'],
+    option = option_menu('Menu', ['Home', 'Model Prediction', 'Add to cart', 'Payment'],
                          icons=['robot', 'robot', 'cart', 'cash'])
 
 if option == 'Home':
@@ -76,7 +76,7 @@ if option == 'Home':
     st.write('Before you proceed, click on model prediction to determine if our products are highly recommended for you')
 
 
-if option == 'Model for Predicting':
+if option == 'Model Prediction':
     img1 = Image.open('img4.jpg')
     img2 = Image.open('img6.jpg')
     img3 = Image.open('Clothes.jpg')
@@ -119,6 +119,32 @@ if option == 'Model for Predicting':
        if (cloth_prediction[0] ==1):
            women_clothing = 'The cloth is recommended, You can go ahead to add it to your cart'
            st.success(women_clothing)
+           img10 = Image.open('image1.jpg')
+           img11 = Image.open('img3.jpg')
+           img12 = Image.open('img2.jpg')
+           img13 = Image.open('img4.jpg')
+           img14 = Image.open('img6.jpg')
+           img15 = Image.open('Clothes.jpg')
+           col1, col2, col3, col4, col5, col6 = st.columns(6)
+
+           with col1:
+               st.image(img10, caption='N5000')
+
+           with col2:
+               st.image(img11, caption='N10,000')
+
+           with col3:
+               st.image(img12, caption='N15,000')
+
+           with col4:
+               st.image(img13, caption='N8,000')
+
+           with col5:
+               st.image(img14, caption='N3,500')
+
+           with col6:
+               st.image(img15, caption='N2000')
+
 
        else:
            women_clothing = 'The cloth is not recommended, You can select another class of dress.'
